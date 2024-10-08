@@ -80,13 +80,35 @@ Analyze simulated data of the Milky Way analogue to study the radial metallicity
 4. **Residual Analysis**: We calculated and plotted the residuals to identify any deviations from the linear fit.
 5. **2D Histograms**: We generated histograms of the simulated median A(O), the fitted A(O), and the residuals in the x-y plane.
 
-## Observations
-- The linear model shows a negative metallicity gradient, as expected for galaxies like the Milky Way.
-- Residuals show some systematic trends, suggesting possible non-linear effects that are not captured by the linear model.
-- The RMSE of the fit is {RMSE_value}, indicating the overall error of the linear model.
+## Choice of 2D Bins
+For the 2D histograms, we chose to use **50 bins** along both the x and y axes. This choice strikes a balance between revealing the key structures in the data (such as the spiral arms) while avoiding over- or under-smoothing.
+
+### Fewer Bins:
+With fewer bins (e.g., 20 or 30), the data would be overly smoothed, and fine details—such as the spiral structure and regions of higher metallicity—would be missed. The residuals would also appear overly generalized, obscuring any subtle patterns or deviations from the linear model.
+
+### More Bins:
+Using more bins (e.g., 100 or more) would result in over-segmentation. This would create noise in the histograms, especially in areas with fewer data points. As a result, the histograms would become harder to interpret, and the residuals might show spurious variations, which would complicate the analysis without adding meaningful insights.
+
+## Residuals Analysis
+### Observations:
+The residuals plot reveals a **spiral pattern**, which suggests that the linear model does not fully capture the complexity of the oxygen abundance distribution. Specifically:
+- There are regions in the galaxy where the residuals are consistently positive or negative, indicating that the linear model either over- or underestimates the metallicity in certain parts of the galaxy.
+- These patterns suggest that the metallicity gradient is not purely linear, and other factors—such as radial migration, star formation, or gas inflow—might be affecting the metallicity distribution.
+
+### Proposed Explanation:
+The spiral pattern observed in the residuals is likely due to **radial metallicity gradients** in the spiral arms, where star formation and gas mixing processes affect the local oxygen abundance. In particular:
+- **Star Formation**: Spiral arms are regions of active star formation, which can lead to localized increases in metallicity. The linear model, which assumes a smooth gradient, cannot capture these localized variations.
+- **Radial Migration**: Stars and gas might migrate within the galaxy, either inflowing toward the center or outward toward the edges, affecting the distribution of metals and creating non-linear patterns that the linear fit cannot model.
+- **Non-Linear Effects**: The radial metallicity gradient in real galaxies is often more complex than a simple linear decrease. A more sophisticated, possibly non-linear model might provide a better fit to the data.
+
+## RMSE of the Fit
+The RMSE (Root Mean Square Error) of the linear fit was calculated to be **{RMSE_value}**. This gives a quantitative measure of how well the linear model fits the data.
 
 ## Files
 - `task3_metallicity_analysis.py`: Python script for performing the analysis.
 - `metallicity_vs_radius.png`: Galactocentric radius vs. oxygen abundance plot with linear fit.
 - `residuals_metallicity_vs_radius.png`: Residuals of the linear fit.
 - `metallicity_residuals_histogram.png`: 2D histograms of A(O), fitted values, and residuals.
+
+## Conclusion
+The linear model successfully captures the overall trend of decreasing metallicity with increasing galactocentric radius. However, the residuals reveal non-linear patterns, particularly along the spiral arms, which suggest that a more complex model is required to fully explain the metallicity distribution in this galaxy. The chosen bin size (50 bins) provided
