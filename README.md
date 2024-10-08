@@ -67,4 +67,3 @@ If you need further help, feel free to check the `task2_adql_query.py` script fo
 
 This task successfully retrieved stars from the Gaia DR3 catalog, crossmatched them with the 2MASS catalog, and generated visualizations for Messier 67. These diagrams provide insight into the stellar population of the cluster, with the CMD displaying the main sequence and the J-Ks diagram offering another perspective on star properties. The results can be used to further analyze the cluster’s characteristics and its star population.
 
-
