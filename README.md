@@ -63,7 +63,30 @@ If you need further help, feel free to check the `task2_adql_query.py` script fo
 - **m67_filtered_stars.csv**: Filtered list of stars with good photometry and positive parallax.
 - **cmds_m67.png**: A PNG file containing both the CMD and J-Ks vs. Apparent K plots.
 
+
 ## Summary
 
 This task successfully retrieved stars from the Gaia DR3 catalog, crossmatched them with the 2MASS catalog, and generated visualizations for Messier 67. These diagrams provide insight into the stellar population of the cluster, with the CMD displaying the main sequence and the J-Ks diagram offering another perspective on star properties. The results can be used to further analyze the cluster’s characteristics and its star population.
 
+# Task 3: Radial Metallicity Gradient Analysis in Milky Way Analogue
+
+## Objective
+Analyze simulated data of the Milky Way analogue to study the radial metallicity gradient. This involves fitting a linear model to the relationship between gas-phase oxygen abundance (A(O)) and galactocentric radius (RGal), generating residuals, and creating 2D histograms of A(O), fitted values, and residuals.
+
+## Approach
+1. **Loading Data**: We loaded the provided FITS file containing x, y, z positions and oxygen abundances.
+2. **Galactocentric Radius**: We calculated the galactocentric radius (RGal) from the x, y, and z positions.
+3. **Linear Fit**: We fitted a linear model to A(O) as a function of RGal. The slope of the fit was -0.03, indicating a negative gradient in metallicity with increasing radius.
+4. **Residual Analysis**: We calculated and plotted the residuals to identify any deviations from the linear fit.
+5. **2D Histograms**: We generated histograms of the simulated median A(O), the fitted A(O), and the residuals in the x-y plane.
+
+## Observations
+- The linear model shows a negative metallicity gradient, as expected for galaxies like the Milky Way.
+- Residuals show some systematic trends, suggesting possible non-linear effects that are not captured by the linear model.
+- The RMSE of the fit is {RMSE_value}, indicating the overall error of the linear model.
+
+## Files
+- `task3_metallicity_analysis.py`: Python script for performing the analysis.
+- `metallicity_vs_radius.png`: Galactocentric radius vs. oxygen abundance plot with linear fit.
+- `residuals_metallicity_vs_radius.png`: Residuals of the linear fit.
+- `metallicity_residuals_histogram.png`: 2D histograms of A(O), fitted values, and residuals.
