@@ -24,18 +24,7 @@ This task involved querying the **Gaia DR3** catalog to find bright stars (G < 1
 
 Using **ADQL** (Astronomical Data Query Language), we queried the **Gaia DR3** catalog for stars located within a 1-degree radius of Messier 67's central coordinates (RA = 132.825, Dec = 11.8). To focus on the brightest stars, we filtered by G-band magnitude, keeping only stars with **G < 14**.
 
-**ADQL Query**:
-```sql
-SELECT gaia.*, tmass.j_m, tmass.ks_m, tmass.ph_qual
-FROM gaiadr3.gaia_source AS gaia
-JOIN gaiadr3.tmass_psc_xsc_best_neighbour AS xmatch
-  ON gaia.source_id = xmatch.source_id
-JOIN gaiadr1.tmass_original_valid AS tmass
-  ON tmass.designation = xmatch.original_ext_source_id
-WHERE CONTAINS(
-  POINT('ICRS', gaia.ra, gaia.dec),
-  CIRCLE('ICRS', 132.825, 11.8, 1)) = 1
-AND gaia.phot_g_mean_mag < 14
+
 
 ### Step 2: Crossmatch with 2MASS
 
